@@ -16,6 +16,8 @@
     "build-css": "cat static/styles/*.css > static/bundle.css",
     "watch-js": "watchify -t reactify browser/main.js -o static/bundle.js -dv",
     "watch-css": "catw static/styles/*.css -o static/bundle.css -v",
-    "watch": "npm run watch-js & npm run watch-css"
+    "watch": "npm run watch-js & npm run watch-css",
+    "start": "npm run build && node server.js",
+    "start-dev": "npm run watch & npm start"
   }
 }
