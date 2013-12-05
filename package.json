@@ -1,0 +1,21 @@
+{
+  "name": "react-test",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "browserify": "~2.36.1",
+    "react-tools": "~0.5.1",
+    "reactify": "~0.4.0",
+    "uglify-js": "~2.4.6"
+  },
+  "devDependencies": {
+    "watchify": "~0.4.1"
+  },
+  "scripts": {
+    "build-js": "browserify -t reactify browser/main.js | uglifyjs -mc > static/bundle.js",
+    "build-css": "cat static/styles/*.css > static/bundle.css",
+    "watch-js": "watchify -t reactify browser/main.js -o static/bundle.js -dv",
+    "watch-css": "catw static/styles/*.css -o static/bundle.css -v",
+    "watch": "npm run watch-js & npm run watch-css"
+  }
+}
